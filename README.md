@@ -24,7 +24,24 @@ docker attach <container-name> 	    # Start interactive console
 
 
 
+## How to compile C code
 
-## Read more
+Once you are in the Docker container, some environment variables are set (maybe not) for you to use:
 
-Visit [my blog](http://developer.jlcs.es/2017-02-05-onion-omega2-docker-sdk/) for some more detailed information (if available).
+```bash
+mipsel-openwrt-linux-gcc [options] 
+```
+
+The compiler binaries are generated inside the directory:
+
+```bash
+/lede/staging_dir/toolchain-mipsel_24kc_gcc-5.4.0_musl-1.1.15/bin/
+```
+
+*Note: The 'el' in mipsel indicates it is a Little Endian version of MIPS.*
+
+
+
+## I found a bug
+
+Make a pull-request or create an issue.

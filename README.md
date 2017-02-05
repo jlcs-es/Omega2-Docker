@@ -6,7 +6,7 @@ Based on [borromeotlhs' dockerfile](https://hub.docker.com/r/borromeotlhs/docker
 
 ## How to use
 
-Pull and run from [my Docker Hub]() with the command:
+Pull and run from [my Docker Hub](https://hub.docker.com/r/jlcs/omega2-sdk/) with the command:
 
 ```bash
 docker run -it --name omega2-sdk-app -v /my_host_dir:/remote jlcs/omega2-sdk bash

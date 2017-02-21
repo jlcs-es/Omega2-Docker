@@ -10,6 +10,18 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   subversion g++ zlib1g-dev build-essential git python libncurses5-dev gawk gettext unzip file libssl-dev wget \
 && rm -rf /var/lib/apt/lists/*
 
+# Install CMake 3.7.2
+RUN mkdir ~/temp &&\
+    cd ~/temp &&\
+    wget https://cmake.org/files/v3.7/cmake-3.7.2.tar.gz  &&\
+    tar xzvf cmake-3.7.2.tar.gz &&\
+    cd cmake-3.7.2/ &&\
+    ./bootstrap &&\
+    make  &&\
+    make install &&\
+    rm -rf ~/temp
+
+
 RUN git clone https://github.com/lede-project/source.git lede
 
 RUN adduser omega &&  echo 'omega:omega' | chpasswd   && chown -R omega:omega lede
